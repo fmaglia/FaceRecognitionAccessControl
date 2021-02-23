@@ -1,7 +1,7 @@
 # Face Recognition for Access Control 
 
 The project allows to recognize in real-time video from webcam the faces of different people. Moreover with the identification, the user can register the correct access time to the office position.
-The software executed on an embedding system, such as Raspberry Pi, can replace an old badge system based on sign papers or cards.
+The software, executed on an embedding system (such as Raspberry Pi), can replace an access system based on badges.
 The GUI is developed using tkinter library and the logs are saved directly on text files.
 Thanks to face recognition library: https://github.com/ageitgey/face_recognition
 

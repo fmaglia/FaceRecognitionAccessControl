@@ -26,7 +26,7 @@ It needs the execution of the python script and the following real-time identifc
 
 The system can be boosted using CNN: for doing this you need to modify the face_locations function as below.
 
-$ face_locations = face_recognition.face_locations(image, model="cnn")
+`face_locations = face_recognition.face_locations(small_frame, model="cnn")`
 
 Obviously, the performance will be reduced highly increasing the number of faces to recognize.
 

@@ -54,7 +54,7 @@ def register(window, face_names, welcome):
     registration = not registration
     for name in face_names:
             if (name != "Unknown"):
-                print(name,"registered at",str(datetime.now())[:-7])
+                print(name.capitalize(),"registered at",str(datetime.now())[:-7])
                 f = open(file_name, 'a+')
                 f.write(str(datetime.now())[11:-10]+"\t"+name+"\n")
                 f.close()
@@ -77,13 +77,11 @@ def show_frame():
     face_names = []
     global registration
     _, frame = cap.read()
-    # frame = cv2.flip(frame, 1)
     small_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGBA)
 
     cv2.putText(frame,str(datetime.now().strftime("%H:%M %d/%m/%Y")),(20,20), font, .5,(255,0,0),2,cv2.LINE_AA)
     # Resize frame of video to 1/4 size for faster face recognition processing
     small_frame = cv2.resize(frame, (0, 0), fx=0.5, fy=0.5)
-    # print("registration show frame",registration)
     if (registration):
         # Convert the image from BGR color (which OpenCV uses) to RGB color (which face_recognition uses)
         # Only process every other frame of video to save time
@@ -95,12 +93,10 @@ def show_frame():
         for face_encoding in face_encodings:
             # See if the face is a match for the known face(s)
             matches = face_recognition.compare_faces(known_face_encodings, face_encoding)
-            # name = "Sconosciuto"
-            # # If a match was found in known_face_encodings, just use the first one.
+            # If a match was found in known_face_encodings, just use the first one.
             if (sum(matches)==1 and True in matches):
                 first_match_index = matches.index(True)
                 name = known_face_names[first_match_index]
-                # print("name",name)
                 face_names.append(name)
                 
             elif (sum(matches) > 1):

@@ -39,8 +39,9 @@ Obviously, the performance will be reduced highly increasing the number of faces
 At the startup of the python application, all the images from the people folder are loaded and the face encodings are generated.
 These face encodings will be used to compare with the current ones generated during the real-time video.
 After that, it's possibile to register a new access in the office clicking on the register button. The datetime is picked from the current system datetime.
-With the second click on this button allows to register the access in the text file. 
-In order to reduce the resources used by the python script the register function can be temporarily deactivated by clicking on the register button.
+To register an access you need to firstly click on the register button to activate the face identification and then re-click it again to register the office access.
+In order to reduce the resources used by the python script the register function is temporarily deactivated after the correct registration procedure.
+
 
 
 ****

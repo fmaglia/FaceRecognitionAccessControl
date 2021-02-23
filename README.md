@@ -24,6 +24,8 @@ $ python3 face_tk_new.py
 
 It needs the execution of the python script and the following real-time identifcation.
 
+Obviously, the performance will be reduced highly increasing the number of faces to recognize.
+
 
 ****
 
